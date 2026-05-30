@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@theme {
+  --color-neon-blue: #00f3ff;
+  --color-neon-pink: #ff00ea;
+  --color-neon-purple: #b026ff;
+  --color-neon-green: #39ff14;
+  --color-neon-red: #ff003c;
+  --color-dark-bg: #090a0f;
+  --color-dark-panel: #11131a;
+
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-cyber: 'Outfit', 'Inter', system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-dark-bg text-white overflow-hidden m-0 p-0 select-none;
+    font-family: var(--font-sans);
+  }
+
+  /* Prevent selection and touch actions for native app feel */
+  canvas {
+    display: block;
+    touch-action: none;
+  }
+}
+
+@layer utilities {
+  .text-shadow-neon-blue {
+    text-shadow: 0 0 5px theme('colors.neon-blue'), 0 0 10px theme('colors.neon-blue'), 0 0 20px theme('colors.neon-blue');
+  }
+  .text-shadow-neon-pink {
+    text-shadow: 0 0 5px theme('colors.neon-pink'), 0 0 10px theme('colors.neon-pink'), 0 0 20px theme('colors.neon-pink');
+  }
+  .shadow-neon-blue {
+    box-shadow: 0 0 5px theme('colors.neon-blue'), 0 0 10px theme('colors.neon-blue');
+  }
+  .shadow-neon-pink {
+    box-shadow: 0 0 5px theme('colors.neon-pink'), 0 0 10px theme('colors.neon-pink');
+  }
+}
